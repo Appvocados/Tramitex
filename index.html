@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tramitex - Trámites Ciudadanos Mexicanos</title>
+
+    <!-- Metadatos adicionales -->
+    <meta name="description" content="Gestiona tus documentos oficiales de manera rápida y sencilla con Tramitex. Accede a trámites importantes como CURP, Acta de Nacimiento, RFC y más.">
+    <meta name="keywords" content="Trámites, Documentos Oficiales, CURP, Acta de Nacimiento, RFC, Infonavit, Incen, CFE, IMSS, INE">
+    <meta name="author" content="Tu Nombre o Tu Empresa">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Metadatos para redes sociales -->
+    <meta property="og:title" content="Tramitex - Trámites Ciudadanos Mexicanos">
+    <meta property="og:description" content="Gestiona tus documentos oficiales de manera rápida y sencilla.">
+    <meta property="og:image" content="https://www.logotypes101.com/logos/52/B7DB6A475E9B0D8E0E6B8DA3FF113083/gobierno_de_mexico_2018.png">
+    <meta property="og:url" content="https://tramitex.site">
+    <meta property="og:type" scontent="website">
+
+    <meta name="twitter:card" content="summary_large_images">
+    <meta name="twitter:title" content="Tramitex - Trámites Ciudadanos Mexicanos">
+    <meta name="twitter:description" content="Gestiona tus documentos oficiales de manera rápida y sencilla.">
+    <meta name="twitter:image" content="https://www.logotypes101.com/logos/52/B7DB6A475E9B0D8E0E6B8DA3FF113083/gobierno_de_mexico_2018.png">
+    
+    <!-- Metadato para el favicon -->
+    <link rel="icon" href="https://cdn.pixabay.com/photo/2018/08/18/18/38/coat-of-arms-3615253_1280.png" type="image/x-icon"> <!-- Cambia esta URL por la de tu favicon -->
+
+    
+    <!-- Vinculamos Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Estilos generales del cuerpo */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e9f5f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Cabecera */
+        header {
+            background-color: #00796b;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            display: flex; /* Usar flex para alinear elementos */
+            align-items: center; /* Centrar verticalmente */
+            justify-content: center; /* Centrar horizontalmente */
+            gap: 15px; /* Espacio entre el logo y el texto */
+            flex-direction: column; /* Cambiar a columna para colocar elementos en vertical */
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        header img {
+            width: 75px; /* Ajusta el tamaño del logo */
+            height: auto; /* Mantiene la proporción */
+        }
+
+        /* Descripción */
+        .description {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        /* Contenedor de los botones */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        /* Espaciado adicional */
+        .container a {
+            margin: 10px;
+        }
+
+        /* Estilos de los botones */
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 25px;
+            text-align: left;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            width: 300px;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .button i {
+            margin-right: 15px;
+            font-size: 1.5rem;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+            transform: translateY(-5px);
+        }
+
+        .button:active {
+            background-color: #3e8e41;
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: #00796b;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Estilos para el carrusel de banners */
+        .banner-container {
+            width: 80%;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            margin-top: 30px;
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+        }
+
+        .banner-container-small {
+            width: 80%;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+        }
+
+        .banners {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 300%;
+        }
+
+        .banner {
+            width: 100%;
+            flex-shrink: 0;
+            border-radius: 8px; /* Bordes redondeados para los banners */
+        }
+
+        /* Estilo del banner superior más pequeño */
+        .banner-small img {
+            width: 100%;
+            height: 150px; /* Tamaño reducido */
+            object-fit: cover;
+        }
+
+        /* Estilo del banner inferior más grande */
+        .banner-large img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        /* Estilos para el nuevo espacio de publicidad */
+        .extra-banner-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .extra-banner {
+            width: 100%;
+            max-width: 300px; /* Ancho máximo del banner */
+            border-radius: 8px; /* Bordes redondeados */
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para el banner */
+        }
+
+        .extra-banner img {
+            width: 100%;
+            height: auto; /* Altura automática para mantener proporciones */
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Cabecera -->
+    <header>
+        <img src="https://www.logotypes101.com/logos/52/B7DB6A475E9B0D8E0E6B8DA3FF113083/gobierno_de_mexico_2018.png" alt="Logo Gobierno Mexicano">
+        <h1>Tramitex</h1>
+        <p>Gestiona tus Documentos Oficiales de Manera Rápida y Sencilla</p> <!-- Mover este párrafo aquí -->
+    </header>
+
+    <!-- Descripción debajo del título -->
+    <div class="description">
+        <p>Accede a los trámites más importantes para ciudadanos mexicanos, como el CURP, Acta de Nacimiento, RFC y más.</p>
+    </div>
+
+    <!-- Carrusel de banners publicitarios (superior y más pequeño) -->
+    <div class="banner-container banner-container-small">
+        <div class="banners" id="bannerCarouselSmall">
+            <div class="banner banner-small">
+                <img src="https://www.consumoteca.com/wp-content/uploads/2020/06/Publicidad-Banner-anuncio-728x90.jpg" alt="Publicidad 1">
+            </div>
+            <div class="banner banner-small">
+                <img src="https://www.webyempresas.com/wp-content/uploads/2019/05/ejemplo-de-banner-publicitario.jpg" alt="Publicidad 2">
+            </div>
+            <div class="banner banner-small">
+                <img src="https://images.squarespace-cdn.com/content/v1/55db52d0e4b013d21525fb00/1451358853980-MXYX56NGE5B4SAOL2Z7E/image-asset.png" alt="Publicidad 3">
+            </div>
+        </div>
+    </div>
+
+<!-- Contenedor de botones -->
+<div class="container">
+    <a href="#" class="button" onclick="abrirEnlaces('https://www.gob.mx/curp/', 'https://www.cpmrevenuegate.com/zihe5r556?key=ba9d186cd55d4c484324eafb078bdf8f')">
+        <i class="fas fa-id-card"></i> CURP
+    </a>
+    <a href="#" class="button" onclick="abrirEnlaces('https://www.gob.mx/ActaDeNacimiento/', 'https://www.cpmrevenuegate.com/zihe5r556?key=ba9d186cd55d4c484324eafb078bdf8f')">
+        <i class="fas fa-file-alt"></i> Acta de Nacimiento
+    </a>
+    <a href="#" class="button" onclick="abrirEnlaces('https://www.sat.gob.mx/personas/tramites-del-rfc', 'hhttps://www.cpmrevenuegate.com/zihe5r556?key=ba9d186cd55d4c484324eafb078bdf8f')">
+        <i class="fas fa-fingerprint"></i> RFC
+    </a>
+    <a href="#" class="button" onclick="abrirEnlaces('https://www.sat.gob.mx/aplicacion/operacion/31205/consulta-de-situacion-fiscal', 'https://www.cpmrevenuegate.com/zihe5r556?key=ba9d186cd55d4c484324eafb078bdf8f')">
+        <i class="fas fa-file-invoice"></i> Acta de Situación Fiscal
+    </a>
+    <a href="#" class="button" onclick="abrirEnlaces('https://www.ine.mx/', 'https://www.cpmrevenuegate.com/zihe5r556?key=ba9d186cd55d4c484324eafb078bdf8f')">
+        <i class="fas fa-id-badge"></i> INE
+    </a>
+    <a href="#" class="button" onclick="abrirEnlaces('https://www.gob.mx/imss/', 'https://www.cpmrevenuegate.com/zihe5r556?key=ba9d186cd55d4c484324eafb078bdf8f')">
+        <i class="fas fa-hospital"></i> IMSS
+    </a>
+    
+    <!-- Sección de Infonavit -->
+    <div class="heading"></div>
+    <a href="#" class="button" onclick="abrirEnlaces('https://portalmx.infonavit.org.mx/wps/portal/infonavit/inicio', 'https://www.cpmrevenuegate.com/zihe5r556?key=ba9d186cd55d4c484324eafb078bdf8f')">
+        <i class="fas fa-home"></i> Infonavit
+    </a>
+
+    <!-- Sección de Incen -->
+    <div class="heading"></div>
+    <a href="#" class="button" onclick="abrirEnlaces('https://www.gob.mx/benestar/acciones-y-programas/incentivos-a-personas-mayores', 'https://www.cpmrevenuegate.com/zihe5r556?key=ba9d186cd55d4c484324eafb078bdf8f')">
+        <i class="fas fa-users"></i> Incen
+    </a>
+    
+    <a href="#" class="button" onclick="abrirEnlaces('https://app.cfe.mx/Aplicaciones/CCFE/Recibos/Consulta/Default.aspx', 'https://www.cpmrevenuegate.com/zihe5r556?key=ba9d186cd55d4c484324eafb078bdf8f')">
+        <i class="fas fa-lightbulb"></i> CFE
+    </a>
+</div>
+
+
+    <!-- Carrusel de banners publicitarios (inferior y más grande) -->
+    <div class="banner-container">
+        <div class="banners" id="bannerCarouselLarge">
+            <div class="banner banner-large">
+                <img src="https://i.pinimg.com/originals/96/16/15/9616152d32901b21e6031007a5d9f28b.jpg" alt="Publicidad 4">
+            </div>
+            <div class="banner banner-large">
+                <img src="https://bannermania.pe/wp-content/uploads/2021/06/BANNER-WEB-PEQUEÑO.jpg" alt="Publicidad 5">
+            </div>
+            <div class="banner banner-large">
+                <img src="https://www.factorgestion.es/wp-content/uploads/2020/01/banner-publicitario-web.png" alt="Publicidad 6">
+            </div>
+        </div>
+    </div>
+
+    <!-- Espacios de publicidad extra -->
+    <div class="extra-banner-container">
+        <div class="extra-banner">
+            <img src="https://via.placeholder.com/300x150?text=Publicidad+Extra+1" alt="Publicidad Extra 1">
+        </div>
+        <div class="extra-banner">
+            <img src="https://via.placeholder.com/300x150?text=Publicidad+Extra+2" alt="Publicidad Extra 2">
+        </div>
+        <div class="extra-banner">
+            <img src="https://via.placeholder.com/300x150?text=Publicidad+Extra+3" alt="Publicidad Extra 3">
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Tramitex | Todos los derechos reservados</p>
+    </footer>
+
+    <!-- JavaScript para abrir los enlaces -->
+    <script>
+        function abrirEnlaces(tramiteUrl, publicidadUrl) {
+            window.open(tramiteUrl, '_blank'); // Abre el enlace del trámite en una nueva pestaña
+            window.open(publicidadUrl, '_blank'); // Abre el enlace de publicidad en otra nueva pestaña
+        }
+
+        // JavaScript para el carrusel automático
+        let bannerIndexSmall = 0;
+        const bannersSmall = document.getElementById('bannerCarouselSmall');
+        const bannerCountSmall = bannersSmall.children.length;
+
+        function moveBannerSmall() {
+            bannerIndexSmall++;
+            if (bannerIndexSmall >= bannerCountSmall) {
+                bannerIndexSmall = 0;
+            }
+            bannersSmall.style.transform = `translateX(-${bannerIndexSmall * 100}%)`;
+        }
+
+        setInterval(moveBannerSmall, 3000); // Cambia el banner superior cada 3 segundos
+
+        let bannerIndexLarge = 0;
+        const bannersLarge = document.getElementById('bannerCarouselLarge');
+        const bannerCountLarge = bannersLarge.children.length;
+
+        function moveBannerLarge() {
+            bannerIndexLarge++;
+            if (bannerIndexLarge >= bannerCountLarge) {
+                bannerIndexLarge = 0;
+            }
+            bannersLarge.style.transform = `translateX(-${bannerIndexLarge * 100}%)`;
+        }
+
+        setInterval(moveBannerLarge, 4000); // Cambia el banner inferior cada 4 segundos
+    </script>
+
+</body>
+</html>
